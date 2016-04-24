@@ -31,10 +31,23 @@ namespace Snake
         public void Move ( int offset, Direction direction)
         {
             if (direction == Direction.right)
+            {
                 x = x + offset;
-
-            if (direction == Direction.Left)
+            }
+            else if (direction == Direction.Left)
+            {
                 x = x - offset;
+            }
+            else if (direction == Direction.up)
+            {
+                y = y - offset;
+            }
+            else if (direction == Direction.down)
+            {
+                y = y + offset;
+            }
+                
+
 
         }
 
@@ -43,6 +56,12 @@ namespace Snake
         {
             Console.SetCursorPosition(x, y); // забирает значения переменных, преобразовывает в координаты  
             Console.Write(sym); // выводит символ по заданным координатам 
+        }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
     }
 }

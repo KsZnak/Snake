@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake
@@ -34,10 +35,24 @@ namespace Snake
             Snake snake = new Snake(p, 4, Direction.right);
             snake.Drown();
 
-          
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                  
 
-            Console.ReadKey();
+                }
 
+                Thread.Sleep(100);
+                snake.Move();
+            }
+
+
+
+
+         
             
         }
         
