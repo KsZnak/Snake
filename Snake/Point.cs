@@ -61,7 +61,7 @@ namespace Snake
             Console.SetCursorPosition(x, y); // забирает значения переменных, преобразовывает в координаты  
             Console.Write(sym); // выводит символ по заданным координатам 
         }
-
+         
         public void Clear()
         {
             sym = ' ';
