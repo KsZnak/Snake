@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Point
+     class Point
     {
         public int x;
         public int y;
@@ -49,6 +49,10 @@ namespace Snake
                 
 
 
+        }
+        public bool IsHit (Point p)
+        {
+            return p.x == this.x && p.y == this.y;
         }
 
 
